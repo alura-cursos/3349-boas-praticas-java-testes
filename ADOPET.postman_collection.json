@@ -1,0 +1,288 @@
+{
+	"info": {
+		"_postman_id": "e9941c88-b7eb-4fc7-92a6-057715a5c85f",
+		"name": "ADOPET",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "ABRIGO",
+			"item": [
+				{
+					"name": "Listar abrigos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/abrigos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"abrigos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cadastrar abrigo",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nome\": \"Abrigo xpto\",\n    \"telefone\": \"61977777777\",\n    \"email\": \"abrigoxpto@email.com.br\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/abrigos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"abrigos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar pets do abrigo",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/abrigos/1/pets",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"abrigos",
+								"1",
+								"pets"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cadastrar pet do abrigo",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"tipo\": \"CACHORRO\",\n    \"nome\": \"bidu\",\n    \"raca\": \"SRD\",\n    \"idade\": 5,\n    \"cor\": \"preto\",\n    \"peso\": 5.45\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/abrigos/2/pets",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"abrigos",
+								"2",
+								"pets"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ADOCAO",
+			"item": [
+				{
+					"name": "Solicitar adocao",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"idPet\": 1,\n    \"idTutor\": 1,\n    \"motivo\": \"Motivo qualquer\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/adocoes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"adocoes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Aprovar adocao",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"idAdocao\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/adocoes/aprovar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"adocoes",
+								"aprovar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Reprovar adocao",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"idAdocao\": 1,\n    \"justificativa\": \"Justificativa qualquer\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/adocoes/reprovar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"adocoes",
+								"reprovar"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "PET",
+			"item": [
+				{
+					"name": "Listar pets disponiveis",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/pets",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pets"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "TUTOR",
+			"item": [
+				{
+					"name": "Cadastrar tutor",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nome\": \"Fulano da Silva\",\n    \"telefone\": \"61900000000\",\n    \"email\": \"fulano@email.com.br\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/tutores",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"tutores"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar tutor",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 1,\n    \"nome\": \"Fulano da Silva 2\",\n    \"telefone\": \"61900000001\",\n    \"email\": \"fulano2@email.com.br\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/tutores",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"tutores"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
