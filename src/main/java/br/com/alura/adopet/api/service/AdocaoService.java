@@ -40,7 +40,7 @@ public class AdocaoService {
 
         validacoes.forEach(v -> v.validar(dto));
 
-        Adocao adocao = new Adocao(tutor, pet, dto.motivo());
+        Adocao adocao = new Adocao(null, null, null);
         repository.save(adocao);
 
         emailService.enviarEmail(
